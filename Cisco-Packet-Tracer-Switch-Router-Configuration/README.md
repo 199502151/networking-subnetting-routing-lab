@@ -33,23 +33,23 @@ A Fast Ethernet interface was changed to half duplex using the IOS command:
 duplex half
 ```
 
-The switch hostname was changed to:
-
-```text
-mainsw
-```
-
-using:
+The switch hostname was changed to `mainsw` using:
 
 ```text
 hostname mainsw
 ```
+
+### MOTD Banner
 
 The Message of the Day was configured with:
 
 ```text
 banner motd #Catalyst 2950 at Herzing Lab#
 ```
+
+![MOTD banner configuration](01-motd-banner.png)
+
+### IOS Command Abbreviation and Help
 
 The command history was viewed with:
 
@@ -62,6 +62,10 @@ and its abbreviated form:
 ```text
 sh h
 ```
+
+When the command was reduced to a single letter, IOS returned an ambiguous command message. Using `s?` showed the possible commands beginning with `s`: `setup`, `show`, and `ssh`.
+
+![Ambiguous IOS commands](02-ambiguous-commands.png)
 
 ## Router Configuration
 
@@ -85,7 +89,9 @@ showed the following interfaces:
 
 Initially, all interfaces were administratively down.
 
-### FastEthernet0/0
+![Router interfaces before configuration](03-router-interfaces.png)
+
+### FastEthernet0/0 Activation
 
 The interface was enabled using:
 
@@ -93,7 +99,13 @@ The interface was enabled using:
 no shutdown
 ```
 
-It was configured with:
+After enabling it, the interface was no longer administratively down. It remained `down/down` until an active physical connection was present.
+
+![FastEthernet0/0 enabled](04-fastethernet0-0-enabled.png)
+
+### FastEthernet0/0 IP Configuration
+
+The interface was configured with:
 
 ```text
 IP address: 192.168.10.1/24
@@ -109,7 +121,11 @@ description Internal
 no shutdown
 ```
 
-### FastEthernet0/1
+The new IP address was verified with `show ip interface brief`.
+
+![Router IP configuration](05-router-ip-configuration.png)
+
+### FastEthernet0/1 DHCP Configuration
 
 The second Fast Ethernet interface was configured to obtain an IP address through DHCP and was enabled with:
 
@@ -134,6 +150,8 @@ Subnet mask: 255.255.255.0
 
 The PC was connected directly to the router through `FastEthernet0/0`.
 
+![PC IPv4 configuration](06-pc-ip-configuration.png)
+
 ## Connectivity Test
 
 From the router User EXEC mode, connectivity to the PC was tested with:
@@ -150,7 +168,13 @@ Success rate is 80 percent (4/5)
 
 This confirmed communication between the Cisco 2811 router and the PC.
 
+![Successful ping from router to PC](07-ping-success.png)
+
+## Straight-Through Cable Test
+
 The lab also tested replacing the cross-over cable with a straight-through cable. In this Packet Tracer simulation, the link remained active and the ping still succeeded.
+
+![Straight-through cable connectivity test](08-straight-through-test.png)
 
 ## Skills Demonstrated
 
@@ -171,6 +195,6 @@ The lab also tested replacing the cross-over cable with a straight-through cable
 - ICMP connectivity testing with `ping`
 - Troubleshooting interface status and command syntax
 
-## Screenshots
+## Lab Result
 
-Screenshots from the lab will be added here to document the switch and router configurations, CLI commands, interface status, PC connection, and successful ping test.
+The switch and router were successfully configured through Cisco IOS CLI, the PC was placed on the `192.168.10.0/24` network, and end-to-end connectivity between the Cisco 2811 router and the PC was verified successfully.
