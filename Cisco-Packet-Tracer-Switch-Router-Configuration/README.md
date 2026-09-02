@@ -47,7 +47,7 @@ The Message of the Day was configured with:
 banner motd #Catalyst 2950 at Herzing Lab#
 ```
 
-![MOTD banner configuration](01-motd-banner.png)
+![MOTD banner configuration](screenshots/01-motd-banner.png)
 
 ### IOS Command Abbreviation and Help
 
@@ -65,7 +65,7 @@ sh h
 
 When the command was reduced to a single letter, IOS returned an ambiguous command message. Using `s?` showed the possible commands beginning with `s`: `setup`, `show`, and `ssh`.
 
-![Ambiguous IOS commands](02-ambiguous-commands.png)
+![Ambiguous IOS commands](screenshots/02-ambiguous-commands.png)
 
 ## Router Configuration
 
@@ -89,7 +89,7 @@ showed the following interfaces:
 
 Initially, all interfaces were administratively down.
 
-![Router interfaces before configuration](03-router-interfaces.png)
+![Router interfaces before configuration](screenshots/03-router-interfaces.png)
 
 ### FastEthernet0/0 Activation
 
@@ -101,7 +101,7 @@ no shutdown
 
 After enabling it, the interface was no longer administratively down. It remained `down/down` until an active physical connection was present.
 
-![FastEthernet0/0 enabled](04-fastethernet0-0-enabled.png)
+![FastEthernet0/0 enabled](screenshots/04-fastethernet0-0-enabled.png)
 
 ### FastEthernet0/0 IP Configuration
 
@@ -123,7 +123,7 @@ no shutdown
 
 The new IP address was verified with `show ip interface brief`.
 
-![Router IP configuration](05-router-ip-configuration.png)
+![Router IP configuration](screenshots/05-router-ip-configuration.png)
 
 ### FastEthernet0/1 DHCP Configuration
 
@@ -150,7 +150,7 @@ Subnet mask: 255.255.255.0
 
 The PC was connected directly to the router through `FastEthernet0/0`.
 
-![PC IPv4 configuration](06-pc-ip-configuration.png)
+![PC IPv4 configuration](screenshots/06-pc-ip-configuration.png)
 
 ## Connectivity Test
 
@@ -168,13 +168,13 @@ Success rate is 80 percent (4/5)
 
 This confirmed communication between the Cisco 2811 router and the PC.
 
-![Successful ping from router to PC](07-ping-success.png)
+![Successful ping from router to PC](screenshots/07-ping-success.png)
 
 ## Straight-Through Cable Test
 
 The lab also tested replacing the cross-over cable with a straight-through cable. In this Packet Tracer simulation, the link remained active and the ping still succeeded.
 
-![Straight-through cable connectivity test](08-straight-through-test.png)
+![Straight-through cable connectivity test](screenshots/08-straight-through-test.png)
 
 ## Skills Demonstrated
 
